@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %><br>
+  Employees: <%= @company.employees.count %>
+</p>
+<% if @company.employees.any? %>
+<% @company.employees.each do |e| %>
+  <br><img src="https://placeimg.com/80/80/people" alt="Random images"> <%= e.fname %> | <%= e.lname %> | <%= e.phone %><hr>
+<% end %>
+
+<% end %>
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
